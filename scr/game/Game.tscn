@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://asst/song/airtone forgottenland.wav" type="AudioStream" id=1]
+[ext_resource path="res://scr/Player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scr/game/Game.gd" type="Script" id=4]
+[ext_resource path="res://scr/enemy/skeleton_arm.png" type="Texture" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 40, 60, 0, 60, 0, 0, 40, 0 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "skeleton_arm.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 40, 60 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 31
+collision_mask = 31
+format = 1
+tile_data = PoolIntArray( 65533, 0, 0, 36, 0, 0, 131069, 0, 0, 65572, 0, 0, 196605, 0, 0, 131108, 0, 0, 262141, 0, 0, 196644, 0, 0, 327677, 0, 0, 262180, 0, 0, 393213, 0, 0, 327716, 0, 0, 458749, 0, 0, 393252, 0, 0, 524285, 0, 0, 458788, 0, 0, 589821, 0, 0, 524324, 0, 0, 655357, 0, 0, 589860, 0, 0, 720893, 0, 0, 655396, 0, 0, 786429, 0, 0, 720932, 0, 0, 851965, 0, 0, 786468, 0, 0, 917501, 0, 0, 852004, 0, 0, 983037, 0, 0, 917540, 0, 0, 1048573, 0, 0, 983076, 0, 0, 1114109, 0, 0, 1048612, 0, 0, 1179645, 0, 0, 1114148, 0, 0, 1245181, 0, 0, 1179684, 0, 0, 1310717, 0, 0, 1245220, 0, 0, 1376253, 0, 0, 1310756, 0, 0, 1441789, 0, 0, 1376292, 0, 0, 1507325, 0, 0, 1441828, 0, 0, 1572861, 0, 0, 1507364, 0, 0, 1638397, 0, 0, 1572900, 0, 0, 1703933, 0, 0, 1638436, 0, 0, 1769469, 0, 0, 1703972, 0, 0, 1835005, 0, 0, 1769508, 0, 0, 1900541, 0, 0, 1835044, 0, 0, 1966077, 0, 0, 1900580, 0, 0, 2031613, 0, 0, 1966116, 0, 0, 2097149, 0, 0, 2031652, 0, 0, 2162685, 0, 0, 2097188, 0, 0, 2228221, 0, 0, 2162724, 0, 0, 2293757, 0, 0, 2228260, 0, 0, 2359293, 0, 0, 2293796, 0, 0, 2424829, 0, 0, 2359332, 0, 0, 2490365, 0, 0, 2424868, 0, 0, 2555901, 0, 0, 2490404, 0, 0, 2621437, 0, 0, 2555940, 0, 0, 2686973, 0, 0, 2621476, 0, 0, 2752509, 0, 0, 2687012, 0, 0, 2818045, 0, 0, 2752548, 0, 0, 2883581, 0, 0, 2818084, 0, 0, 2949117, 0, 0, 2883620, 0, 0, 3014653, 0, 0, 2949156, 0, 0, 3080189, 0, 0, 3014692, 0, 0, 3145725, 0, 0, 3080228, 0, 0, 3211261, 0, 0, 3145764, 0, 0, 3276797, 0, 0, 3211300, 0, 0, 3342333, 0, 0, 3276836, 0, 0, 3407869, 0, 0, 3342372, 0, 0, 3473405, 0, 0, 3407908, 0, 0, 3538941, 0, 0, 3473444, 0, 0, 3604477, 0, 0, 3538980, 0, 0, 3670013, 0, 0, 3604516, 0, 0, 3735549, 0, 0, 3670052, 0, 0, 3801085, 0, 0, 3735588, 0, 0, 3866621, 0, 0, 3801124, 0, 0, 3932157, 0, 0, 3866660, 0, 0, 3997693, 0, 0, 3932196, 0, 0, 4063229, 0, 0, 3997732, 0, 0, 4128765, 0, 0, 4063268, 0, 0, 4194301, 0, 0, 4128804, 0, 0, 4259837, 0, 0, 4194340, 0, 0, 4259876, 0, 0, 4325412, 0, 0 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -26.878
+autoplay = true
+
+[connection signal="coin_collected" from="player" to="." method="_on_player_coin_collected"]
+[connection signal="dead" from="player" to="." method="_on_player_dead"]
+[connection signal="power_up" from="player" to="." method="_on_player_power_up"]

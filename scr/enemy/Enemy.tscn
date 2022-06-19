@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://scr/Bg/Node2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asst/image/meteor_detailedSmall.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.8105, 23.1349 )
+
+[node name="Enemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
+collision_layer = 2
+collision_mask = 2147483649
+script = ExtResource( 1 )
+speed = 300
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Blood" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 2.72, 2.48 )
+
+[node name="meteor_detailedSmall" type="Sprite" parent="."]
+scale = Vector2( 1.14262, 1.14262 )
+texture = ExtResource( 3 )

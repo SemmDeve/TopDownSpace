@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.182857, 0.314286, 0.468571, 0.565714, 0.748571, 0.765714, 0.942857, 1 )
+colors = PoolColorArray( 0.952941, 0, 0, 1, 1, 0.470202, 0, 1, 1, 0.23955, 0, 1, 1, 0.0381102, 0, 1, 1, 0.537255, 0, 1, 0.87451, 0.87451, 0.87451, 0.0470588, 0.883832, 0.877423, 0.809546, 0.0825994, 0.895425, 0.641307, 0.641307, 0.301176, 1, 0.913725, 0, 0.52549 )
+
+[node name="Blood" type="CPUParticles2D"]
+amount = 20
+emission_shape = 2
+emission_rect_extents = Vector2( 20, 10 )
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 9.52
+initial_velocity_random = 0.91
+angular_velocity = -260.57
+angular_velocity_random = 1.0
+orbit_velocity = 0.2
+orbit_velocity_random = 1.0
+linear_accel = 1.13
+linear_accel_random = 0.36
+radial_accel = 11.43
+radial_accel_random = 0.13
+scale_amount = 2.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 1 )
+hue_variation = 0.02
+anim_speed = 10.0
+anim_speed_random = 1.0
+anim_offset = 0.5
+anim_offset_random = 1.0

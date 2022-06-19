@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asst/image/star_medium.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0115607, 0.196532, 0.416185, 0.572254, 0.699422, 1 )
+colors = PoolColorArray( 0.335279, 0.783577, 0.0807607, 0.859708, 0, 0, 0, 0, 0.333333, 0.815686, 0, 0.847059, 0.340764, 0.693086, 0.308359, 0.895356, 0.356863, 0.427451, 0.976471, 1, 0.346559, 0.597457, 0.548879, 0.933028, 1, 0.266667, 0.266667, 1 )
+
+[node name="background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 576.0
+margin_bottom = 1027.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 490.334, -126.806 )
+rotation = 1.86014
+amount = 77
+lifetime = 20.0
+preprocess = 10.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 576, 500 )
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 1.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 1 )
+hue_variation = -0.01
+hue_variation_random = 0.18

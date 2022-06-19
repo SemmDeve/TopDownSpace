@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Script/player.gd" type="Script" id=1]
+[ext_resource path="res://asst/image/ship_L.png" type="Texture" id=2]
+[ext_resource path="res://asst/image/effect_purple.png" type="Texture" id=3]
+[ext_resource path="res://asst/Audio/Engine.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45.0962, 4.37109 )
+
+[node name="player" type="KinematicBody2D" groups=["player"]]
+position = Vector2( 292.353, 870.955 )
+collision_layer = 18
+collision_mask = 2147483656
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1.88702, -107.093 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0.378693, -76.752, -21.8938, -36.2161, -47.74, -3.36169, -47.74, 19.6383, 47.76, 20.1383, 47.76, -7.86169, 20.8694, -37.1071 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.44611, -93.4346 )
+shape = SubResource( 1 )
+
+[node name="body" type="Node2D" parent="."]
+position = Vector2( 1.88702, -107.093 )
+
+[node name="Sprite" type="Sprite" parent="body"]
+position = Vector2( -0.353552, -32.5269 )
+scale = Vector2( 1.87283, 2.01647 )
+texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="effect_purple" type="Sprite" parent="."]
+position = Vector2( 2.15897, -73.6744 )
+scale = Vector2( 0.968715, 0.968715 )
+texture = ExtResource( 3 )
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -24.349
+autoplay = true
+mix_target = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

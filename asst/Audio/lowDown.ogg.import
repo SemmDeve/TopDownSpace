@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lowDown.ogg-18fe48cea135e437e926f21e333010de.oggstr"
+
+[deps]
+
+source_file="res://asst/Audio/lowDown.ogg"
+dest_files=[ "res://.import/lowDown.ogg-18fe48cea135e437e926f21e333010de.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

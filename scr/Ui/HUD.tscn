@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://asst/Font/LemonMilkLight-owxMq.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://asst/Font/LemonMilkRegular-X3XE2.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Script/HUD.gd" type="Script" id=3]
+[ext_resource path="res://asst/Font/BebasNeue-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 4 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ScoreBox" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_top = 101.853
+margin_bottom = 230.853
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreBox"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 556.0
+margin_bottom = 109.0
+alignment = 2
+
+[node name="l" type="Label" parent="ScoreBox/HBoxContainer"]
+margin_left = 331.0
+margin_right = 443.0
+margin_bottom = 89.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+text = "score
+"
+
+[node name="Score" type="Label" parent="ScoreBox/HBoxContainer"]
+margin_left = 447.0
+margin_top = 10.0
+margin_right = 536.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+
+[node name="massage" type="Label" parent="."]
+margin_top = 442.588
+margin_right = 576.0
+margin_bottom = 538.588
+custom_fonts/font = SubResource( 3 )
+text = "died"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

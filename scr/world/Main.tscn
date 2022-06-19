@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Script/Main.gd" type="Script" id=1]
+[ext_resource path="res://scr/Ui/Screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scr/Ui/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scr/spawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://asst/Audio/laserLarge_003.ogg" type="AudioStream" id=5]
+[ext_resource path="res://asst/Audio/impactBell_heavy_002.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scr/Bg/background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://asst/Audio/lowDown.ogg" type="AudioStream" id=8]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=9]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Screen" parent="." instance=ExtResource( 2 )]
+
+[node name="background" parent="." instance=ExtResource( 7 )]
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="spawn" parent="." instance=ExtResource( 4 )]
+
+[node name="died" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 288, 512 )
+stream = ExtResource( 5 )
+volume_db = -22.225
+
+[node name="point" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -13.173
+
+[node name="power" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.591
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 9 )
+banner_on_top = false
+banner_size = "SMART_BANNER"
+banner_id = "ca-app-pub-3940256099942544/6300978111"
+interstitial_id = "ca-app-pub-3940256099942544/1033173712"
+is_personalized = false
+
+[connection signal="start_game" from="Screen" to="." method="new_game"]
